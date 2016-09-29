@@ -5,3 +5,7 @@
 
     .inactive-proposal{ng-if: "selectedProposalId != proposal.id", ng-click: "selectProposal(proposal)"}
       %proposal_collapsed{proposal: "proposal"}
+
+  %loading{ng-if: "loadMoreExecuting"}
+  .lmo-show-more{ng-if: "hasMoreProposals"}
+    %button.proposal-accordian__show-more{ng-hide: "loadMoreExecuting", ng-click: "loadMore()", translate: "common.action.show_more"}

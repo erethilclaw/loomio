@@ -6,8 +6,8 @@ angular.module('loomioApp').directive 'previousProposalsCard', ->
   controller: ($scope, $rootScope, Records) ->
 
     Records.votes.fetchMyVotes($scope.discussion)
-    Records.proposals.fetchByDiscussion($scope.discussion).then ->
-      $rootScope.$broadcast 'threadPageProposalsLoaded'
+    # Records.proposals.fetchByDiscussion($scope.discussion).then ->
+    #   $rootScope.$broadcast 'threadPageProposalsLoaded'
 
     lastRecentlyClosedProposal = ->
       return unless $scope.anyProposals() and !$scope.discussion.hasActiveProposal()
